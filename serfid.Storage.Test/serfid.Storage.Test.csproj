@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B4FF3EFE-3CD7-4390-8556-5AAE255CF567}</ProjectGuid>
+    <ProjectGuid>{0FF3DBFA-5131-49BA-AAC7-79AB53B74104}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>serfid.MainModule.Test</RootNamespace>
-    <AssemblyName>serfid.MainModule.Test</AssemblyName>
+    <RootNamespace>serfid.Storage.Test</RootNamespace>
+    <AssemblyName>serfid.Storage.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,9 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Moq, Version=4.2.1507.118, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\packages\Moq.4.2.1507.0118\lib\net40\Moq.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Moq">
+      <HintPath>..\SolutionItems\Moq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -54,7 +53,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="SerfidTest.cs" />
+    <Compile Include="StorageTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,13 +61,10 @@
       <Project>{41EF4300-FEFF-411B-9647-C187018D35E7}</Project>
       <Name>serfid.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\serfid.MainModule\serfid.MainModule.csproj">
-      <Project>{70A361D3-0198-41EC-B8B6-912D50D7FBFA}</Project>
-      <Name>serfid.MainModule</Name>
+    <ProjectReference Include="..\serfid.Storage\serfid.Storage.csproj">
+      <Project>{696C8EBB-B96E-4568-8F75-5683C9566905}</Project>
+      <Name>serfid.Storage</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

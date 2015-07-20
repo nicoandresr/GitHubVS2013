@@ -1,7 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using serfid.Interfaces.Enumerations;
 using serfid.Interfaces.Filter;
+using serfid.Interfaces.Storage;
+using serfid.Interfaces.ValueObjects;
 
 namespace serfid.Filter.Test
 {
@@ -11,6 +14,7 @@ namespace serfid.Filter.Test
         #region Attributes
 
         private IFilter filterStandartProtocol;
+        private Mock<IStorage> storageMock;
 
         #endregion
 
@@ -19,7 +23,8 @@ namespace serfid.Filter.Test
         [TestInitialize]
         public void Initialize()
         {
-            this.filterStandartProtocol = new FilterPrototipeProtocol();
+            this.storageMock = new Mock<IStorage>();
+            this.filterStandartProtocol = new FilterPrototipeProtocol(this.storageMock.Object);
         }
 
         #endregion
@@ -53,12 +58,14 @@ namespace serfid.Filter.Test
         {
             //Arrange
             string validReading = "01203D2A01916E8B8719BAE03C";
+            this.storageMock.Setup(s => s.Save(It.IsAny<ReadingInfo>()));
 
             //Act
             FilterResult result = this.filterStandartProtocol.Tramit(validReading);
 
             //Assert
             Assert.AreEqual(FilterResult.Acepted, result);
+            this.storageMock.VerifyAll();
         }
 
         [TestMethod]

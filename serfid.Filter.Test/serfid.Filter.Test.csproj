@@ -65,9 +65,9 @@
       <Project>{BAD6298B-560E-442A-B1F0-3D5D7F8B2B9D}</Project>
       <Name>serfid.Filter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\serfid.Interfaces\serfid.Interfaces.csproj">
+    <ProjectReference Include="..\serfid.Interfaces\serfid.Contracts.csproj">
       <Project>{41EF4300-FEFF-411B-9647-C187018D35E7}</Project>
-      <Name>serfid.Interfaces</Name>
+      <Name>serfid.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

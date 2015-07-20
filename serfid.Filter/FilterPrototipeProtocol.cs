@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using serfid.Interfaces.Enumerations;
 using serfid.Interfaces.Filter;
+using serfid.Interfaces.Storage;
+using serfid.Interfaces.ValueObjects;
 
 namespace serfid.Filter
 {
@@ -10,11 +12,17 @@ namespace serfid.Filter
     {
         #region Attributes
 
-        private int validLength = 26;
+        private const int validLength = 26;
+        private readonly IStorage _storage;
 
         #endregion
 
         #region Constructor
+
+        public FilterPrototipeProtocol(IStorage storage)
+        {
+            this._storage = storage;
+        }
 
         #endregion
 
@@ -29,12 +37,30 @@ namespace serfid.Filter
         public FilterResult Tramit(string weft)
         {
             FilterResult result = this.ValidateWeft(weft);
+            if (result == FilterResult.Acepted)
+            {
+                ReadingInfo information = this.GetReadingInfo(weft);
+                this._storage.Save(information);
+            }
+
             return result;
         }
 
         #endregion
 
         #region Prvate methods
+
+        private ReadingInfo GetReadingInfo(string weft)
+        {
+            var readingInfo = new ReadingInfo
+            {
+                Reader = GetReader(weft),
+                Tag = GetTag(weft),
+                ReadingDateTime = DateTime.Now
+            };
+
+            return readingInfo;
+        }
 
         private FilterResult ValidateWeft(string weft)
         {
@@ -79,9 +105,9 @@ namespace serfid.Filter
             return new List<string>
             {
                 GetHeader(weft),
-                GetCompany(weft),
+                GetReader(weft),
                 GetRef(weft),
-                GetSubject(weft),
+                GetTag(weft),
                 GetPassword(weft)
             };
         }
@@ -96,7 +122,7 @@ namespace serfid.Filter
             return weft.Substring(0, 2);
         }
 
-        private static string GetCompany(string weft)
+        private static string GetReader(string weft)
         {
             return weft.Substring(2, 6);
         }
@@ -106,7 +132,7 @@ namespace serfid.Filter
             return weft.Substring(8, 2);
         }
 
-        private static string GetSubject(string weft)
+        private static string GetTag(string weft)
         {
             return weft.Substring(10, 6);
         }

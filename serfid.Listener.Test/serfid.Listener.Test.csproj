@@ -58,9 +58,9 @@
     <Compile Include="ListenerTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\serfid.Interfaces\serfid.Interfaces.csproj">
+    <ProjectReference Include="..\serfid.Interfaces\serfid.Contracts.csproj">
       <Project>{41EF4300-FEFF-411B-9647-C187018D35E7}</Project>
-      <Name>serfid.Interfaces</Name>
+      <Name>serfid.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\serfid.Listener\serfid.Listener.csproj">
       <Project>{8BBDE004-0DC8-47D6-941B-F3CFA5AA971B}</Project>

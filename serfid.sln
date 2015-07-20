@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serfid.Interfaces", "serfid.Interfaces\serfid.Interfaces.csproj", "{41EF4300-FEFF-411B-9647-C187018D35E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serfid.Contracts", "serfid.Interfaces\serfid.Contracts.csproj", "{41EF4300-FEFF-411B-9647-C187018D35E7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.5 Infraestructure", "1.5 Infraestructure", "{8D668BF1-9724-4FB1-87CE-ADD34689869D}"
 EndProject
@@ -20,6 +20,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Database", "2 - Database", "{2F37E98C-F025-422D-B2F4-87BF7F44C242}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Solution items", "3 - Solution items", "{6343601B-F732-4F1B-B3AD-12ABDD3DF646}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionItems\Moq.dll = SolutionItems\Moq.dll
+		SolutionItems\Ninject.dll = SolutionItems\Ninject.dll
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 Presentation", "1.1 Presentation", "{BC636FAB-CC24-4AE8-8EA8-68A69F1B0CA9}"
 EndProject
@@ -29,7 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.3 Aplication", "1.3 Aplic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.4 Domain", "1.4 Domain", "{E4322CAD-35DA-4F7C-8BB8-24BD02A5E644}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.5.1 Interfaces", "1.5.1 Interfaces", "{4F5E8297-BD8D-4505-BC9E-EA41FBF02FDB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.5.1 Contracts", "1.5.1 Contracts", "{4F5E8297-BD8D-4505-BC9E-EA41FBF02FDB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.3.1 MainModule", "1.3.1 MainModule", "{8EB85039-4FBD-40A0-91D5-763F74CF8E2A}"
 EndProject
@@ -50,6 +54,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serfid.Filter", "serfid.Filter\serfid.Filter.csproj", "{BAD6298B-560E-442A-B1F0-3D5D7F8B2B9D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serfid.Filter.Test", "serfid.Filter.Test\serfid.Filter.Test.csproj", "{99075C68-BF8D-46D9-8FDE-88D2BACA7BA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.4.3 Storage", "1.4.3 Storage", "{3939DAA0-A90D-4AC1-9AE7-C8D20FF7CBDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serfid.Storage", "serfid.Storage\serfid.Storage.csproj", "{696C8EBB-B96E-4568-8F75-5683C9566905}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serfid.Storage.Test", "serfid.Storage.Test\serfid.Storage.Test.csproj", "{0FF3DBFA-5131-49BA-AAC7-79AB53B74104}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +103,14 @@ Global
 		{99075C68-BF8D-46D9-8FDE-88D2BACA7BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99075C68-BF8D-46D9-8FDE-88D2BACA7BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99075C68-BF8D-46D9-8FDE-88D2BACA7BA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{696C8EBB-B96E-4568-8F75-5683C9566905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{696C8EBB-B96E-4568-8F75-5683C9566905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{696C8EBB-B96E-4568-8F75-5683C9566905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{696C8EBB-B96E-4568-8F75-5683C9566905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FF3DBFA-5131-49BA-AAC7-79AB53B74104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF3DBFA-5131-49BA-AAC7-79AB53B74104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF3DBFA-5131-49BA-AAC7-79AB53B74104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF3DBFA-5131-49BA-AAC7-79AB53B74104}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,5 +136,8 @@ Global
 		{1BDFF8E6-42FE-4788-B3B3-0F8DC87EC267} = {E4322CAD-35DA-4F7C-8BB8-24BD02A5E644}
 		{BAD6298B-560E-442A-B1F0-3D5D7F8B2B9D} = {1BDFF8E6-42FE-4788-B3B3-0F8DC87EC267}
 		{99075C68-BF8D-46D9-8FDE-88D2BACA7BA9} = {1BDFF8E6-42FE-4788-B3B3-0F8DC87EC267}
+		{3939DAA0-A90D-4AC1-9AE7-C8D20FF7CBDF} = {E4322CAD-35DA-4F7C-8BB8-24BD02A5E644}
+		{696C8EBB-B96E-4568-8F75-5683C9566905} = {3939DAA0-A90D-4AC1-9AE7-C8D20FF7CBDF}
+		{0FF3DBFA-5131-49BA-AAC7-79AB53B74104} = {3939DAA0-A90D-4AC1-9AE7-C8D20FF7CBDF}
 	EndGlobalSection
 EndGlobal

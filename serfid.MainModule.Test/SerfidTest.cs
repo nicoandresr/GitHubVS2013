@@ -4,6 +4,7 @@ using Moq;
 using serfid.Interfaces.Filter;
 using serfid.Interfaces.Listener;
 using serfid.Interfaces.MainModule;
+using serfid.Interfaces.Storage;
 
 namespace serfid.MainModule.Test
 {
@@ -15,6 +16,7 @@ namespace serfid.MainModule.Test
         private ISerfid mainModule;
         private Mock<IListener> listenerMock;
         private Mock<IFilter> filterMock;
+        private Mock<IStorage> storageMock;
 
         #endregion
 
@@ -25,7 +27,8 @@ namespace serfid.MainModule.Test
         {
             this.listenerMock = new Mock<IListener>();
             this.filterMock = new Mock<IFilter>();
-            this.mainModule = new SerfidCore(this.listenerMock.Object, this.filterMock.Object);
+            this.storageMock = new Mock<IStorage>();
+            this.mainModule = new SerfidCore(this.listenerMock.Object, this.filterMock.Object, this.storageMock.Object);
         }
 
         #endregion
@@ -38,6 +41,7 @@ namespace serfid.MainModule.Test
             this.mainModule = null;
             this.listenerMock = null;
             this.filterMock = null;
+            this.storageMock = null;
         }
 
         #endregion
@@ -50,6 +54,7 @@ namespace serfid.MainModule.Test
             //Arrange
             this.listenerMock.Setup(l => l.Start());
             this.filterMock.Setup(l => l.Start());
+            this.storageMock.Setup(l => l.Start());
 
             //Act
             this.mainModule.AppStart();
@@ -57,6 +62,7 @@ namespace serfid.MainModule.Test
             //Assert
             this.listenerMock.VerifyAll();
             this.filterMock.VerifyAll();
+            this.storageMock.VerifyAll();
         }
 
         #endregion
