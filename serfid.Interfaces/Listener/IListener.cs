@@ -4,7 +4,7 @@ namespace serfid.Interfaces.Listener
 {
     public interface IListener
     {
-        ModuleStatus start();
+        ModuleStatus Start();
         ReadingResult Read(string reading);
     }
 }

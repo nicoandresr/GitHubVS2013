@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using serfid.Interfaces.Filter;
 using serfid.Interfaces.Listener;
 using serfid.Interfaces.MainModule;
 
@@ -13,6 +14,7 @@ namespace serfid.MainModule.Test
 
         private ISerfid mainModule;
         private Mock<IListener> listenerMock;
+        private Mock<IFilter> filterMock;
 
         #endregion
 
@@ -22,7 +24,8 @@ namespace serfid.MainModule.Test
         public void Initialize()
         {
             this.listenerMock = new Mock<IListener>();
-            this.mainModule = new SerfidCore(this.listenerMock.Object);
+            this.filterMock = new Mock<IFilter>();
+            this.mainModule = new SerfidCore(this.listenerMock.Object, this.filterMock.Object);
         }
 
         #endregion
@@ -34,6 +37,7 @@ namespace serfid.MainModule.Test
         {
             this.mainModule = null;
             this.listenerMock = null;
+            this.filterMock = null;
         }
 
         #endregion
@@ -44,13 +48,15 @@ namespace serfid.MainModule.Test
         public void LoadApplication()
         {
             //Arrange
-            this.listenerMock.Setup(l => l.start());
+            this.listenerMock.Setup(l => l.Start());
+            this.filterMock.Setup(l => l.Start());
 
             //Act
             this.mainModule.AppStart();
 
             //Assert
             this.listenerMock.VerifyAll();
+            this.filterMock.VerifyAll();
         }
 
         #endregion

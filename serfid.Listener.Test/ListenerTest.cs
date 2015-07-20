@@ -3,6 +3,7 @@ using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using serfid.Interfaces.Enumerations;
+using serfid.Interfaces.Filter;
 using serfid.Interfaces.Infraestructure;
 using serfid.Interfaces.Listener;
 
@@ -14,6 +15,7 @@ namespace serfid.Listener.Test
         #region Attributes
 
         private Mock<ITranslator> translatorMock;
+        private Mock<IFilter> filterMock;
         private IListener listener;
 
         #endregion
@@ -24,7 +26,8 @@ namespace serfid.Listener.Test
         public void Initialize()
         {
             this.translatorMock = new Mock<ITranslator>();
-            this.listener = new Listener(translatorMock.Object);
+            this.filterMock = new Mock<IFilter>();
+            this.listener = new Listener(translatorMock.Object, filterMock.Object);
         }
 
         #endregion
@@ -36,6 +39,7 @@ namespace serfid.Listener.Test
         {
             this.listener = null;
             this.translatorMock = null;
+            this.filterMock = null;
         }
 
         #endregion
@@ -48,7 +52,7 @@ namespace serfid.Listener.Test
             //Arrange
 
             //Act
-            ModuleStatus result = this.listener.start();
+            ModuleStatus result = this.listener.Start();
 
             //Assert
             Assert.AreEqual(ModuleStatus.success, result);
@@ -84,10 +88,9 @@ namespace serfid.Listener.Test
         public void ManageNullReading()
         {
             //Arrange
-            string reading = null;
 
             //Act
-            ReadingResult result = this.listener.Read(reading);
+            ReadingResult result = this.listener.Read(null);
 
             //Assert
             Assert.AreEqual(ReadingResult.Null, result);
@@ -105,6 +108,24 @@ namespace serfid.Listener.Test
             this.listener.Read(encodeReading);
 
             //Assert
+            this.translatorMock.VerifyAll();
+        }
+
+        [TestMethod]
+        public void FilterReading()
+        {
+            //Arrange
+            string helloWorld = "Hello World!";
+            byte[] reading = Encoding.UTF8.GetBytes(helloWorld);
+            string encodeReading = Convert.ToBase64String(reading);
+            this.translatorMock.Setup(t => t.TranslateReading(encodeReading)).Returns(helloWorld);
+            this.filterMock.Setup(f => f.Tramit(helloWorld));
+
+            //Act
+            this.listener.Read(encodeReading);
+
+            //Assert
+            this.filterMock.VerifyAll();
             this.translatorMock.VerifyAll();
         }
 
