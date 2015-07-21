@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="05833626-3fe1-432c-afcd-55afb30bc942" ChangeDateTime="07/21/2015 00:25:09">
+    <Property Name="ElementName" Value="[dbo].[Readings].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Readings]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Reader" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f1ea1199-18e8-4fb4-b11d-e128f912ccb5" ChangeDateTime="07/21/2015 00:27:03">
+    <Property Name="ElementName" Value="[dbo].[Readings].[Reader]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Readings]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Tagg" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8b524e29-b7dd-4a9c-b7a7-313dd1184932" ChangeDateTime="07/21/2015 00:27:06">
+    <Property Name="ElementName" Value="[dbo].[Readings].[Tag]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Readings]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Reader" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1b50b921-271e-4aee-b390-95de9d774b78" ChangeDateTime="07/21/2015 00:27:09">
+    <Property Name="ElementName" Value="[dbo].[Readings].[Tagg]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Readings]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Tag" />
+  </Operation>
+</Operations>

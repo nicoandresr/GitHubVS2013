@@ -5,7 +5,7 @@ using serfid.Interfaces.ValueObjects;
 
 namespace serfid.Storage
 {
-    public class StorageEntityFramework : IStorage
+    public class Storage : IStorage
     {
         public ModuleStatus Start()
         {

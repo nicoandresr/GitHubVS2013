@@ -20,7 +20,7 @@ namespace serfid.Storage.Test
         [TestInitialize]
         public void Initialize()
         {
-            this.storage = new StorageEntityFramework();
+            this.storage = new Storage();
         }
 
         #endregion

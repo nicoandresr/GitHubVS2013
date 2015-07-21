@@ -45,7 +45,7 @@
   <ItemGroup>
     <ProjectReference Include="..\serfid.Interfaces\serfid.Contracts.csproj">
       <Project>{41EF4300-FEFF-411B-9647-C187018D35E7}</Project>
-      <Name>serfid.Interfaces</Name>
+      <Name>serfid.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
