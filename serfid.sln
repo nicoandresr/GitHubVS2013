@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serfid.Contracts", "serfid.Interfaces\serfid.Contracts.csproj", "{41EF4300-FEFF-411B-9647-C187018D35E7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.5 Infraestructure", "1.5 Infraestructure", "{8D668BF1-9724-4FB1-87CE-ADD34689869D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.6 Infraestructure", "1.6 Infraestructure", "{8D668BF1-9724-4FB1-87CE-ADD34689869D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.4.1 Listener", "1.4.1 Listener", "{31938BA6-F116-4329-A28B-1C51B225A3AC}"
 EndProject
@@ -33,7 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.3 Aplication", "1.3 Aplic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.4 Domain", "1.4 Domain", "{E4322CAD-35DA-4F7C-8BB8-24BD02A5E644}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.5.1 Contracts", "1.5.1 Contracts", "{4F5E8297-BD8D-4505-BC9E-EA41FBF02FDB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.6.1 Contracts", "1.6.1 Contracts", "{4F5E8297-BD8D-4505-BC9E-EA41FBF02FDB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.3.1 MainModule", "1.3.1 MainModule", "{8EB85039-4FBD-40A0-91D5-763F74CF8E2A}"
 EndProject
@@ -41,7 +41,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serfid.MainModule", "serfid
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serfid.MainModule.Test", "serfid.MainModule.Test\serfid.MainModule.Test.csproj", "{B4FF3EFE-3CD7-4390-8556-5AAE255CF567}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.5.2 Core", "1.5.2 Core", "{1F6117AC-4EBD-4B83-A355-0C806966D58C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.6.2 Core", "1.6.2 Core", "{1F6117AC-4EBD-4B83-A355-0C806966D58C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serfid.InfraestructureCore", "serfid.InfraestructureCore\serfid.InfraestructureCore.csproj", "{F5F41E25-CE28-45BE-BB15-C8C28A75B9E4}"
 EndProject
@@ -64,6 +64,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.1 SqlServer", "2.1 SqlServer", "{09049AF1-6525-44C3-991D-3322870DE946}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "serfid.Database.SqlServer", "serfid.Database.SqlServer\serfid.Database.SqlServer.sqlproj", "{D9F62BA0-8344-4AAD-80C5-CB9F4D0EA9AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.5 DataAccess", "1.5 DataAccess", "{DA76251B-B186-4580-AD23-23799CDF9C38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.5.1 SqlServerEntityFramework", "1.5.1 SqlServerEntityFramework", "{7C149652-C8DA-4BDF-B859-71AFAF6DCCE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serfid.DataAccess.SqlServerEF", "serfid.DataAccess.SqlServerEF\serfid.DataAccess.SqlServerEF.csproj", "{BE5A0066-69E2-4015-B1A4-FFA109EF7AAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.5.2 Oracle", "1.5.2 Oracle", "{D0D96B0E-E32F-48A3-9755-47BF190D87E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +129,10 @@ Global
 		{D9F62BA0-8344-4AAD-80C5-CB9F4D0EA9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9F62BA0-8344-4AAD-80C5-CB9F4D0EA9AF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D9F62BA0-8344-4AAD-80C5-CB9F4D0EA9AF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BE5A0066-69E2-4015-B1A4-FFA109EF7AAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE5A0066-69E2-4015-B1A4-FFA109EF7AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE5A0066-69E2-4015-B1A4-FFA109EF7AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE5A0066-69E2-4015-B1A4-FFA109EF7AAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -151,5 +163,9 @@ Global
 		{0FF3DBFA-5131-49BA-AAC7-79AB53B74104} = {3939DAA0-A90D-4AC1-9AE7-C8D20FF7CBDF}
 		{09049AF1-6525-44C3-991D-3322870DE946} = {2F37E98C-F025-422D-B2F4-87BF7F44C242}
 		{D9F62BA0-8344-4AAD-80C5-CB9F4D0EA9AF} = {09049AF1-6525-44C3-991D-3322870DE946}
+		{DA76251B-B186-4580-AD23-23799CDF9C38} = {DAFDB99D-8AB4-4605-AA4B-12630B4FB1BF}
+		{7C149652-C8DA-4BDF-B859-71AFAF6DCCE1} = {DA76251B-B186-4580-AD23-23799CDF9C38}
+		{BE5A0066-69E2-4015-B1A4-FFA109EF7AAF} = {7C149652-C8DA-4BDF-B859-71AFAF6DCCE1}
+		{D0D96B0E-E32F-48A3-9755-47BF190D87E7} = {DA76251B-B186-4580-AD23-23799CDF9C38}
 	EndGlobalSection
 EndGlobal

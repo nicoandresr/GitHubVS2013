@@ -1,5 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using serfid.Interfaces.DataAccess;
 using serfid.Interfaces.Enumerations;
 using serfid.Interfaces.Storage;
 using serfid.Interfaces.ValueObjects;
@@ -11,7 +12,8 @@ namespace serfid.Storage.Test
     {
         #region Attributes
 
-        private IStorage storage; 
+        private IStorage storage;
+        private Mock<ISerfidDataAccess> dataAccessMock;
 
         #endregion
 
@@ -20,7 +22,8 @@ namespace serfid.Storage.Test
         [TestInitialize]
         public void Initialize()
         {
-            this.storage = new Storage();
+            this.dataAccessMock = new Mock<ISerfidDataAccess>();
+            this.storage = new Storage(this.dataAccessMock.Object);
         }
 
         #endregion
@@ -54,12 +57,14 @@ namespace serfid.Storage.Test
         {
             //Arrange
             ReadingInfo readingInfo = new ReadingInfo();
+            dataAccessMock.Setup(d => d.SaveReading(It.IsAny<ReadingInfo>()));
 
             //Act
             StorageStatus result = this.storage.Save(readingInfo);
 
             //Assert
             Assert.AreEqual(StorageStatus.Saved, result);
+            dataAccessMock.VerifyAll();
         }
 
 
