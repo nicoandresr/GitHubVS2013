@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using serfid.MainModule;
 
 namespace serfid.Console
@@ -13,7 +9,19 @@ namespace serfid.Console
         {
             Serfid appSerfid = new Serfid();
             appSerfid.Run();
-            System.Console.ReadKey();
+            char option = 's';
+            while (option == 's')
+            {
+                System.Console.WriteLine("Desea insertar una lectura s/n?:");
+                ConsoleKeyInfo keyInfo = System.Console.ReadKey();
+                option = keyInfo.KeyChar;
+                if (option == 's')
+                {
+                    string reading = System.Console.ReadLine();
+                    appSerfid.ReadWeft(reading);
+                }
+            }
+            
         }
     }
 }

@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Database", "2 - Databas
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Solution items", "3 - Solution items", "{6343601B-F732-4F1B-B3AD-12ABDD3DF646}"
 	ProjectSection(SolutionItems) = preProject
+		SolutionItems\EntityFramework.dll = SolutionItems\EntityFramework.dll
+		SolutionItems\EntityFramework.SqlServer.dll = SolutionItems\EntityFramework.SqlServer.dll
 		SolutionItems\Moq.dll = SolutionItems\Moq.dll
 		SolutionItems\Ninject.dll = SolutionItems\Ninject.dll
 	EndProjectSection

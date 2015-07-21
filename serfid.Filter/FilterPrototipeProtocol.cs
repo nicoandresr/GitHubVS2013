@@ -48,7 +48,7 @@ namespace serfid.Filter
 
         #endregion
 
-        #region Prvate methods
+        #region Private methods
 
         private ReadingInfo GetReadingInfo(string weft)
         {

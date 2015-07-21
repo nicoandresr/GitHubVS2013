@@ -65,6 +65,19 @@ namespace serfid.MainModule.Test
             this.storageMock.VerifyAll();
         }
 
+        [TestMethod]
+        public void ReadWeft()
+        {
+            //Arrange
+            this.listenerMock.Setup(l => l.Read(It.IsAny<string>()));
+
+            //Act
+            this.mainModule.ReadWeft("test weft");
+
+            //Assert
+            this.listenerMock.VerifyAll();
+        }
+
         #endregion
     }
 }
