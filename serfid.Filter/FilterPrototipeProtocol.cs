@@ -30,7 +30,7 @@ namespace serfid.Filter
 
         public ModuleStatus Start()
         {
-            Console.WriteLine("Filter started!");
+            Console.WriteLine("Filter module started!");
             return ModuleStatus.success;
         }
 

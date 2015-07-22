@@ -34,6 +34,7 @@ namespace serfid.Storage.Test
         public void Cleanup()
         {
             this.storage = null;
+            this.dataAccessMock = null;
         }
 
         #endregion
@@ -41,7 +42,7 @@ namespace serfid.Storage.Test
         #region Test methods
 
         [TestMethod]
-        public void StartFilter()
+        public void StartUser()
         {
             //Arrange
 
