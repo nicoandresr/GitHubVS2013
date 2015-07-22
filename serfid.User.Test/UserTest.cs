@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using serfid.Interfaces.DataAccess;
 using serfid.Interfaces.Enumerations;
+using serfid.Interfaces.System;
 using serfid.Interfaces.User;
 using serfid.Interfaces.ValueObjects;
 
@@ -42,7 +44,7 @@ namespace serfid.User.Test
         #region Test methods
 
         [TestMethod]
-        public void StartFilter()
+        public void StartUser()
         {
             //Arrange
 
@@ -51,6 +53,21 @@ namespace serfid.User.Test
 
             //Assert
             Assert.AreEqual(ModuleStatus.success, result);
+        }
+
+        [TestMethod]
+        public void GetReadings()
+        {
+            //Arrange
+            PagingInfo parameters = new PagingInfo();
+            List<ReadingInfo> response = new List<ReadingInfo>();
+            this.dataAccessMock.Setup(d => d.GetReadings(It.IsAny<PagingInfo>())).Returns(response);
+
+            //Act
+            List<ReadingInfo> result = this.user.GetReadings(parameters);
+
+            //Assert
+            this.dataAccessMock.VerifyAll();
         }
 
         #endregion

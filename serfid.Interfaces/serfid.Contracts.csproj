@@ -50,6 +50,7 @@
     <Compile Include="MainModule\ISerfid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Storage\IStorage.cs" />
+    <Compile Include="System\PagingInfo.cs" />
     <Compile Include="User\IUser.cs" />
     <Compile Include="ValueObjects\ReadingInfo.cs" />
   </ItemGroup>
