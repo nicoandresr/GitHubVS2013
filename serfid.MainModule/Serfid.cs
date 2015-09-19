@@ -4,7 +4,7 @@ namespace serfid.MainModule
 {
     public class Serfid
     {
-        private SerfidCore _serfidCore;
+        private readonly SerfidCore _serfidCore;
 
         public Serfid()
         {

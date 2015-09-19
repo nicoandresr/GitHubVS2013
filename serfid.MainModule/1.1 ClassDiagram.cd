@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="serfid.MainModule.Serfid">
+    <Position X="8.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAQAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Serfid.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_serfidCore" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="serfid.MainModule.SerfidCore">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAABAAAACgAAAAACAAAAAAAAQAIAAAAAAAAAAgEA=</HashCode>
+      <FileName>SerfidCore.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_filter" />
+      <Field Name="_listener" />
+      <Field Name="_storage" />
+      <Field Name="_user" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="serfid.MainModule.InjectionModule">
+    <Position X="1.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InjectionModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ninject.Modules.NinjectModule" Collapsed="true">
+    <Position X="1.75" Y="1" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="serfid.Listener.Listener" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="serfid.Filter.FilterPrototipeProtocol" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.179" Collapsed="true" />
+  </Class>
+  <Class Name="serfid.Storage.Storage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="serfid.User.User" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="serfid.DataAccess.SqlServerEF.Entities" Collapsed="true">
+    <Position X="11.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="serfid.DataAccess.SqlServerEF.Readings" Collapsed="true">
+    <Position X="11.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="serfid.DataAccess.SqlServerEF.SerfidDataAccess" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="serfid.Interfaces.Filter.IFilter" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="serfid.Interfaces.User.IUser" Collapsed="true">
+    <Position X="5.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="serfid.Interfaces.Storage.IStorage" Collapsed="true">
+    <Position X="5.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="serfid.Interfaces.Listener.IListener" Collapsed="true">
+    <Position X="8.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
