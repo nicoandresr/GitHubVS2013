@@ -12,7 +12,7 @@ namespace serfid.Console
             char option = 's';
             while (option == 's')
             {
-                System.Console.WriteLine("Desea insertar una lectura s/n?:");
+                System.Console.WriteLine("Insertar una lectura s/n?:");
                 ConsoleKeyInfo keyInfo = System.Console.ReadKey();
                 option = keyInfo.KeyChar;
                 if (option == 's')

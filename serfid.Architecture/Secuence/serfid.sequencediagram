@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="48e6a367-ea76-49ef-ae03-542bfa3c0500" name="serfid" linkedPackageId="2e9f36fc-1dcc-49b0-b7ce-753fb7add481" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="503ed944-118c-4c8a-942f-78cd8eea4b66">
+      <profileInstance Id="16e635d1-5b5b-4494-9cbc-61c9416280dd" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="53a2fd44-c264-4e40-bc1b-229a79e22a8a">
+      <profileInstance Id="3215989f-991f-4ed2-b7e1-55950f452fba" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="5dcf691e-23fc-4431-9dd4-0b4fb693267c" name="serfid" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <elementDefinition Id="c8b0d9bd-5104-4ae4-a151-ae589d84f6be" />
+        <lifelines>
+          <lifeline Id="58859abf-f6de-4b3e-96fd-bb34a7bbddad" name="Lifeline1" isActor="false" lifelineDisplayName="Lifeline1">
+            <elementDefinition Id="68600edf-fe74-43bc-98a0-831f503f60ed" />
+          </lifeline>
+        </lifelines>
+      </interaction>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="2e9f36fc-1dcc-49b0-b7ce-753fb7add481" name="serfid.Architecture">
+    <elementDefinition Id="3fb422b6-b57d-496a-93ad-30cb810d4d9f" />
+  </package>
+</SequenceDesignerModel>
