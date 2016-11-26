@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{70A361D3-0198-41EC-B8B6-912D50D7FBFA}</ProjectGuid>
+    <ProjectGuid>{A1BB79FB-1429-4503-B4F7-E981C9F51D5E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>serfid.MainModule</RootNamespace>
-    <AssemblyName>serfid.MainModule</AssemblyName>
+    <RootNamespace>serfid.DataAccess.MongoDB</RootNamespace>
+    <AssemblyName>serfid.DataAccess.MongoDB</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,8 +31,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    <Reference Include="MongoDB.Bson, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.2.4\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.2.4\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.2.4\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Legacy, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharpdriver.2.2.4\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -40,51 +53,21 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InjectionModule.cs" />
-    <Compile Include="SerfidCore.cs" />
+    <Compile Include="SerfidDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Serfid.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\serfid.DataAccess.MongoDB\serfid.DataAccess.MongoDB.csproj">
-      <Project>{a1bb79fb-1429-4503-b4f7-e981c9f51d5e}</Project>
-      <Name>serfid.DataAccess.MongoDB</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\serfid.DataAccess.SqlServerEF\serfid.DataAccess.SqlServerEF.csproj">
-      <Project>{BE5A0066-69E2-4015-B1A4-FFA109EF7AAF}</Project>
-      <Name>serfid.DataAccess.SqlServerEF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\serfid.Filter\serfid.Filter.csproj">
-      <Project>{BAD6298B-560E-442A-B1F0-3D5D7F8B2B9D}</Project>
-      <Name>serfid.Filter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\serfid.InfraestructureCore\serfid.InfraestructureCore.csproj">
-      <Project>{F5F41E25-CE28-45BE-BB15-C8C28A75B9E4}</Project>
-      <Name>serfid.InfraestructureCore</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\serfid.Interfaces\serfid.Contracts.csproj">
       <Project>{41EF4300-FEFF-411B-9647-C187018D35E7}</Project>
       <Name>serfid.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\serfid.Listener\serfid.Listener.csproj">
-      <Project>{8BBDE004-0DC8-47D6-941B-F3CFA5AA971B}</Project>
-      <Name>serfid.Listener</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\serfid.Storage\serfid.Storage.csproj">
-      <Project>{696C8EBB-B96E-4568-8F75-5683C9566905}</Project>
-      <Name>serfid.Storage</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\serfid.User\serfid.User.csproj">
-      <Project>{E25A5309-9934-4D45-BAD1-0EDBCE892D34}</Project>
-      <Name>serfid.User</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="1.1 ClassDiagram.cd" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

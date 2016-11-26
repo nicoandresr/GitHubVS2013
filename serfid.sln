@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serfid.Contracts", "serfid.Interfaces\serfid.Contracts.csproj", "{41EF4300-FEFF-411B-9647-C187018D35E7}"
 EndProject
@@ -83,6 +83,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serfid.User.Test", "serfid.
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "serfid.Architecture", "serfid.Architecture\serfid.Architecture.modelproj", "{5233F9DA-6F16-4C5B-930A-5AA01FB66134}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.5.3 MongoDB", "1.5.3 MongoDB", "{69F58AC5-CF50-4EB3-844F-D611D6270629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serfid.DataAccess.MongoDB", "serfid.DataAccess.MongoDB\serfid.DataAccess.MongoDB.csproj", "{A1BB79FB-1429-4503-B4F7-E981C9F51D5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.2.2 SerfidService", "1.2.2 SerfidService", "{7EF3A7AA-B2C1-4833-89BF-1128F421F066}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serfid.Service", "serfid.Service\serfid.Service.csproj", "{1EAE3F51-BCDC-4B6E-9588-E9486BDBB3C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -155,6 +163,14 @@ Global
 		{5233F9DA-6F16-4C5B-930A-5AA01FB66134}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5233F9DA-6F16-4C5B-930A-5AA01FB66134}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5233F9DA-6F16-4C5B-930A-5AA01FB66134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1BB79FB-1429-4503-B4F7-E981C9F51D5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1BB79FB-1429-4503-B4F7-E981C9F51D5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1BB79FB-1429-4503-B4F7-E981C9F51D5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1BB79FB-1429-4503-B4F7-E981C9F51D5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EAE3F51-BCDC-4B6E-9588-E9486BDBB3C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EAE3F51-BCDC-4B6E-9588-E9486BDBB3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EAE3F51-BCDC-4B6E-9588-E9486BDBB3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EAE3F51-BCDC-4B6E-9588-E9486BDBB3C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -193,5 +209,9 @@ Global
 		{E25A5309-9934-4D45-BAD1-0EDBCE892D34} = {88CAA820-D4E9-4347-8E87-CB80E7F80813}
 		{F3CA1A15-62FC-485E-ABEC-3F512697301E} = {88CAA820-D4E9-4347-8E87-CB80E7F80813}
 		{5233F9DA-6F16-4C5B-930A-5AA01FB66134} = {A0B08B99-4625-4580-9E08-D7603A34CA42}
+		{69F58AC5-CF50-4EB3-844F-D611D6270629} = {DA76251B-B186-4580-AD23-23799CDF9C38}
+		{A1BB79FB-1429-4503-B4F7-E981C9F51D5E} = {69F58AC5-CF50-4EB3-844F-D611D6270629}
+		{7EF3A7AA-B2C1-4833-89BF-1128F421F066} = {E10B91F3-032A-4311-B656-D15E9941CDD1}
+		{1EAE3F51-BCDC-4B6E-9588-E9486BDBB3C6} = {7EF3A7AA-B2C1-4833-89BF-1128F421F066}
 	EndGlobalSection
 EndGlobal

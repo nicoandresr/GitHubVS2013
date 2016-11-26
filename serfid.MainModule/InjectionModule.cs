@@ -1,5 +1,4 @@
 ﻿using Ninject.Modules;
-using serfid.DataAccess.SqlServerEF;
 using serfid.InfraestructureCore.ReadingTranslators;
 using serfid.Interfaces.DataAccess;
 using serfid.Interfaces.Filter;
@@ -18,7 +17,7 @@ namespace serfid.MainModule
             Bind<ITranslator>().To<TranslatorBase64>();
             Bind<IFilter>().To<Filter.FilterPrototipeProtocol>();
             Bind<IStorage>().To<Storage.Storage>();
-            Bind<ISerfidDataAccess>().To<SerfidDataAccess>();
+            Bind<ISerfidDataAccess>().To<serfid.DataAccess.MongoDB.SerfidDataAccess>();
             Bind<IUser>().To<User.User>();
             Bind<SerfidCore>().ToSelf();
         }
