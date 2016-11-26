@@ -1,6 +1,6 @@
 ﻿namespace serfid.Service
 {
-    partial class Service1
+    partial class SerfidService
     {
         /// <summary> 
         /// Required designer variable.

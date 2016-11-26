@@ -11,18 +11,15 @@ using System.Threading.Tasks;
 
 namespace serfid.Service
 {
-    public partial class Service1 : ServiceBase
+    public partial class SerfidService : ServiceBase
     {
-        public Service1()
+        public SerfidService()
         {
             InitializeComponent();
         }
 
         protected override void OnStart(string[] args)
         {
-            var serialPort1 = new SerialPort("TestArduino");
-            serialPort1.Open();
-            var read = serialPort1.ReadLine();
         }
 
         protected override void OnStop()
