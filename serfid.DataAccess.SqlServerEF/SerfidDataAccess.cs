@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using serfid.Interfaces.DataAccess;
@@ -29,6 +30,11 @@ namespace serfid.DataAccess.SqlServerEF
                 .Take(() => parameters.PageSize)
                 .Select(r => new ReadingInfo {Tag = r.Tag, Reader = r.Reader, ReadingDateTime = r.ReadingDateTIme})
                 .ToList();
+        }
+
+        public void RegisterDevice(DeviceInfo device)
+        {
+            throw new NotImplementedException();
         }
     }
 }

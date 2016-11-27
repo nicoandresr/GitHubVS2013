@@ -12,6 +12,7 @@ namespace serfid.DataAccess.MongoDB.Test
         #region Fields
 
         private MongoDataAccess _mongoDA;
+        private static string tag = Guid.NewGuid().ToString().Replace("-", "").ToUpper().Substring(0, 19);
 
         #endregion
 
@@ -50,7 +51,7 @@ namespace serfid.DataAccess.MongoDB.Test
             ReadingInfo info = new ReadingInfo
             {
                 Reader = "R2589",
-                Tag = Guid.NewGuid().ToString().Replace("-", "").ToUpper().Substring(0, 19),
+                Tag = tag,
                 ReadingDateTime = DateTime.Now
             };
 
@@ -71,6 +72,28 @@ namespace serfid.DataAccess.MongoDB.Test
 
             // Assert
             Assert.AreNotEqual(null, readings);
+        }
+
+        [TestMethod]
+        public void RegisterDevice()
+        {
+            // Arrange
+            DeviceInfo info = new DeviceInfo
+            {
+                Tag = tag,
+                Device = "Test device " + tag,
+                Detail = "Test details for device " + tag,
+                Date = DateTime.Now,
+                Price = 1500000,
+                Rating = 3,
+                ImageUrl = "http://www.lenovo.com/images/OneWebImages/FormFactor/Laptops/Thinkpad/400x300/lenovo-laptop-thinkpad-e460-front.png"
+            };
+
+            // Act
+            _mongoDA.RegisterDevice(info);
+
+            // Assert
+            
         }
 
         #endregion

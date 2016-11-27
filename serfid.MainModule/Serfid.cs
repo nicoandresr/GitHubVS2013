@@ -1,5 +1,6 @@
 ﻿using Ninject;
 using System;
+using serfid.Interfaces.ValueObjects;
 
 namespace serfid.MainModule
 {
@@ -28,6 +29,11 @@ namespace serfid.MainModule
         {
             _serfidCore = null;
             _kernel.Dispose();
+        }
+
+        public bool RegisterDevice(DeviceInfo device)
+        {
+            return _serfidCore.RegisterDevice(device);
         }
     }
 }
