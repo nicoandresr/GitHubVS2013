@@ -133,6 +133,7 @@
             // tbDeviceName
             // 
             this.tbDeviceName.Location = new System.Drawing.Point(140, 94);
+            this.tbDeviceName.MaxLength = 300;
             this.tbDeviceName.Name = "tbDeviceName";
             this.tbDeviceName.Size = new System.Drawing.Size(187, 20);
             this.tbDeviceName.TabIndex = 1;
@@ -149,6 +150,7 @@
             // tbDetails
             // 
             this.tbDetails.Location = new System.Drawing.Point(140, 125);
+            this.tbDetails.MaxLength = 300;
             this.tbDetails.Name = "tbDetails";
             this.tbDetails.Size = new System.Drawing.Size(187, 20);
             this.tbDetails.TabIndex = 2;
@@ -165,6 +167,7 @@
             // tbPrice
             // 
             this.tbPrice.Location = new System.Drawing.Point(140, 160);
+            this.tbPrice.MaxLength = 10;
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(187, 20);
             this.tbPrice.TabIndex = 3;
@@ -181,6 +184,7 @@
             // tbRating
             // 
             this.tbRating.Location = new System.Drawing.Point(140, 196);
+            this.tbRating.MaxLength = 1;
             this.tbRating.Name = "tbRating";
             this.tbRating.Size = new System.Drawing.Size(187, 20);
             this.tbRating.TabIndex = 4;
@@ -228,6 +232,7 @@
             // tbImageUrl
             // 
             this.tbImageUrl.Location = new System.Drawing.Point(140, 229);
+            this.tbImageUrl.MaxLength = 700;
             this.tbImageUrl.Name = "tbImageUrl";
             this.tbImageUrl.Size = new System.Drawing.Size(187, 20);
             this.tbImageUrl.TabIndex = 11;

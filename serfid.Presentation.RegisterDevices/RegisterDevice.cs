@@ -7,14 +7,23 @@ namespace serfid.Presentation.RegisterDevices
 {
     public partial class RegisterDevice : Form
     {
-        private readonly Serfid _serfidApp;
-        private static int _maxLenth = 300;
+        #region Fields
 
+        private readonly Serfid _serfidApp;
+
+        #endregion
+
+        #region Constructor
+        
         public RegisterDevice()
         {
             InitializeComponent();
             _serfidApp = new Serfid();
         }
+
+        #endregion
+
+        #region Private methods
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -79,11 +88,11 @@ namespace serfid.Presentation.RegisterDevices
             double price;
             int rating;
             bool incompleteInfo = tbUidTag.Text == string.Empty
-                || tbRating.Text == string.Empty || tbRating.Text.Length >= _maxLenth
-                || tbPrice.Text == string.Empty 
-                || tbDeviceName.Text == string.Empty || tbDeviceName.Text.Length >= _maxLenth
-                || tbDetails.Text == string.Empty || tbDetails.Text.Length >= _maxLenth
-                || tbImageUrl.Text == string.Empty || tbImageUrl.Text.Length >= _maxLenth
+                || tbRating.Text == string.Empty
+                || tbPrice.Text == string.Empty
+                || tbDeviceName.Text == string.Empty
+                || tbDetails.Text == string.Empty
+                || tbImageUrl.Text == string.Empty
                 || double.TryParse(tbPrice.Text, out price) == false
                 || int.TryParse(tbRating.Text, out rating) == false;
 
@@ -124,5 +133,7 @@ namespace serfid.Presentation.RegisterDevices
                                 , MessageBoxButtons.OK
                                 , MessageBoxIcon.Hand);
         }
+
+        #endregion
     }
 }
