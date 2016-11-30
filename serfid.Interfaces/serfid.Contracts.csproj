@@ -52,6 +52,7 @@
     <Compile Include="Storage\IStorage.cs" />
     <Compile Include="System\PagingInfo.cs" />
     <Compile Include="User\IUser.cs" />
+    <Compile Include="ValueObjects\DeviceInfo.cs" />
     <Compile Include="ValueObjects\ReadingInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

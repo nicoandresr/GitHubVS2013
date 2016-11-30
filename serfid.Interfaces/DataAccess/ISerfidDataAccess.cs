@@ -8,5 +8,6 @@ namespace serfid.Interfaces.DataAccess
     {
         void SaveReading(ReadingInfo readingInfo);
         List<ReadingInfo> GetReadings(PagingInfo parameters);
+        void RegisterDevice(DeviceInfo device);
     }
 }

@@ -7,5 +7,6 @@ namespace serfid.Interfaces.Storage
     {
         ModuleStatus Start();
         StorageStatus Save(ReadingInfo information);
+        bool RegisterDevice(DeviceInfo device);
     }
 }

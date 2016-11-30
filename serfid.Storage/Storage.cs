@@ -12,7 +12,7 @@ namespace serfid.Storage
 
         public Storage(ISerfidDataAccess serfidDataAccess)
         {
-            this._dataAccess = serfidDataAccess;
+            _dataAccess = serfidDataAccess;
         }
 
         public ModuleStatus Start()
@@ -23,8 +23,21 @@ namespace serfid.Storage
 
         public StorageStatus Save(ReadingInfo information)
         {
-            this._dataAccess.SaveReading(information);
+            _dataAccess.SaveReading(information);
             return StorageStatus.Saved;
+        }
+
+        public bool RegisterDevice(DeviceInfo device)
+        {
+            try
+            {
+                _dataAccess.RegisterDevice(device);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

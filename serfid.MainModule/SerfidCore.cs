@@ -4,6 +4,7 @@ using serfid.Interfaces.Listener;
 using serfid.Interfaces.MainModule;
 using serfid.Interfaces.Storage;
 using serfid.Interfaces.User;
+using serfid.Interfaces.ValueObjects;
 
 namespace serfid.MainModule
 {
@@ -44,6 +45,11 @@ namespace serfid.MainModule
         public void ReadWeft(string reading)
         {
             this._listener.Read(reading);
+        }
+
+        public bool RegisterDevice(DeviceInfo device)
+        {
+            return _storage.RegisterDevice(device);
         }
 
         #endregion

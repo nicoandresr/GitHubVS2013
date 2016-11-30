@@ -1,4 +1,5 @@
 ﻿using serfid.Interfaces.Listener;
+using serfid.Interfaces.ValueObjects;
 
 namespace serfid.Interfaces.MainModule
 {
@@ -6,5 +7,6 @@ namespace serfid.Interfaces.MainModule
     {
         void AppStart();
         void ReadWeft(string reading);
+        bool RegisterDevice(DeviceInfo device);
     }
 }

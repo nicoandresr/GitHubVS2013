@@ -17,7 +17,7 @@ namespace serfid.MainModule
             Bind<ITranslator>().To<TranslatorBase64>();
             Bind<IFilter>().To<Filter.FilterPrototipeProtocol>();
             Bind<IStorage>().To<Storage.Storage>();
-            Bind<ISerfidDataAccess>().To<serfid.DataAccess.MongoDB.SerfidDataAccess>();
+            Bind<ISerfidDataAccess>().To<serfid.DataAccess.MongoDB.MongoDataAccess>();
             Bind<IUser>().To<User.User>();
             Bind<SerfidCore>().ToSelf();
         }
