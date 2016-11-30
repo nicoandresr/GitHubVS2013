@@ -40,7 +40,7 @@ namespace serfid.Filter
             if (result == FilterResult.Acepted)
             {
                 ReadingInfo information = this.GetReadingInfo(weft);
-                this._storage.Save(information);
+                _storage.SaveReading(information);
             }
 
             return result;

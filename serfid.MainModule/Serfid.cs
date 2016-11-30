@@ -1,6 +1,7 @@
 ﻿using Ninject;
 using System;
 using serfid.Interfaces.ValueObjects;
+using System.Collections.Generic;
 
 namespace serfid.MainModule
 {
@@ -18,6 +19,11 @@ namespace serfid.MainModule
         public void Run()
         {
             _serfidCore.AppStart();
+        }
+
+        public IEnumerable<ReadingLog> GetReadings()
+        {
+            return _serfidCore.GetReadings();
         }
 
         public void ReadWeft(string reading)

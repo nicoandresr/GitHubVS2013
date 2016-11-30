@@ -26,7 +26,7 @@ namespace serfid.Service.Test
         #endregion
 
         #region Tests
-        [TestMethod]
+        //[TestMethod]
         public void CanOpenPort()
         {
             // Arrange
@@ -38,7 +38,7 @@ namespace serfid.Service.Test
             Assert.AreEqual("Success open port: TestArduino", result);
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void CanListenInPort()
         {
             // Arrange

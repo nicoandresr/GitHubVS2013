@@ -8,6 +8,7 @@ namespace serfid.Interfaces.User
     public interface IUser
     {
         ModuleStatus Start();
-        List<ReadingInfo> GetReadings(PagingInfo parameters);
+        bool RegisterDevice(DeviceInfo device);
+        IEnumerable<ReadingLog> GetReadings(PagingInfo parameters);
     }
 }

@@ -23,8 +23,8 @@ namespace serfid.Filter.Test
         [TestInitialize]
         public void Initialize()
         {
-            this.storageMock = new Mock<IStorage>();
-            this.filterStandartProtocol = new FilterPrototipeProtocol(this.storageMock.Object);
+            storageMock = new Mock<IStorage>();
+            filterStandartProtocol = new FilterPrototipeProtocol(storageMock.Object);
         }
 
         #endregion
@@ -34,7 +34,7 @@ namespace serfid.Filter.Test
         [TestCleanup]
         public void Cleanup()
         {
-            this.filterStandartProtocol = null;
+            filterStandartProtocol = null;
         }
 
         #endregion
@@ -47,7 +47,7 @@ namespace serfid.Filter.Test
             //Arrange
 
             //Act
-            ModuleStatus result = this.filterStandartProtocol.Start();
+            ModuleStatus result = filterStandartProtocol.Start();
 
             //Assert
             Assert.AreEqual(ModuleStatus.success, result);
@@ -58,14 +58,14 @@ namespace serfid.Filter.Test
         {
             //Arrange
             string validReading = "01203D2A01916E8B8719BAE03C";
-            this.storageMock.Setup(s => s.Save(It.IsAny<ReadingInfo>()));
+            storageMock.Setup(s => s.SaveReading(It.IsAny<ReadingInfo>()));
 
             //Act
-            FilterResult result = this.filterStandartProtocol.Tramit(validReading);
+            FilterResult result = filterStandartProtocol.Tramit(validReading);
 
             //Assert
             Assert.AreEqual(FilterResult.Acepted, result);
-            this.storageMock.VerifyAll();
+            storageMock.VerifyAll();
         }
 
         [TestMethod]
@@ -75,7 +75,7 @@ namespace serfid.Filter.Test
             string invalidReading = "019BAE03";
 
             //Act
-            FilterResult result = this.filterStandartProtocol.Tramit(invalidReading);
+            FilterResult result = filterStandartProtocol.Tramit(invalidReading);
 
             //Assert
             Assert.AreEqual(FilterResult.Discard, result);
@@ -88,7 +88,7 @@ namespace serfid.Filter.Test
             string invalidReading = "01203D2A01xxxxxx8719BAE03C";
 
             //Act
-            FilterResult result = this.filterStandartProtocol.Tramit(invalidReading);
+            FilterResult result = filterStandartProtocol.Tramit(invalidReading);
 
             //Assert
             Assert.AreEqual(FilterResult.Discard, result);

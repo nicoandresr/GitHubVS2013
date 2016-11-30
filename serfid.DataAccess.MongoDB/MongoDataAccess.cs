@@ -19,17 +19,21 @@ namespace serfid.DataAccess.MongoDB
             _db = mongoClient.GetDatabase("serfid-db");
         }
 
-        public List<ReadingInfo> GetReadings(PagingInfo parameters)
+        public IEnumerable<ReadingLog> GetReadings(PagingInfo parameters)
         {
-            List<ReadingInfo> result = new List<ReadingInfo>();
+            List<ReadingLog> result = new List<ReadingLog>();
             IMongoCollection<BsonDocument> collection = _db.GetCollection<BsonDocument>("readings");
+            IMongoCollection<BsonDocument> devicesCollection = _db.GetCollection<BsonDocument>("devices");
             BsonDocument filter = new BsonDocument();
             IFindFluent<BsonDocument, BsonDocument> documents = collection.Find(filter);
-            result = documents.ToList().Select(d => new ReadingInfo
+            IFindFluent<BsonDocument, BsonDocument> devices = devicesCollection.Find(filter);
+            result = documents.ToList().Select(d => new ReadingLog
             {
                 Reader = d.GetValue("reader").ToString(),
                 Tag = d.GetValue("tag").ToString(),
-                ReadingDateTime = d.GetValue("date").ToUniversalTime()
+                ReadingDateTime = d.GetValue("date").ToUniversalTime(),
+                Device = devices.ToList().FirstOrDefault(x => x.GetValue("tag") == d.GetValue("tag")).GetValue("device").ToString(),
+                ImageUrl = devices.ToList().FirstOrDefault(x => x.GetValue("tag") == d.GetValue("tag")).GetValue("imageUrl").ToString(),
             }).ToList();
             return result;
         }

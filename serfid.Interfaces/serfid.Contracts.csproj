@@ -54,6 +54,7 @@
     <Compile Include="User\IUser.cs" />
     <Compile Include="ValueObjects\DeviceInfo.cs" />
     <Compile Include="ValueObjects\ReadingInfo.cs" />
+    <Compile Include="ValueObjects\ReadingLog.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

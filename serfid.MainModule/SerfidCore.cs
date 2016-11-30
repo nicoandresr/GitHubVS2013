@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using serfid.Interfaces.Filter;
 using serfid.Interfaces.Listener;
 using serfid.Interfaces.MainModule;
 using serfid.Interfaces.Storage;
 using serfid.Interfaces.User;
 using serfid.Interfaces.ValueObjects;
+using serfid.Interfaces.System;
 
 namespace serfid.MainModule
 {
@@ -36,20 +38,26 @@ namespace serfid.MainModule
         public void AppStart()
         {
             Console.WriteLine("Application started!");
-            this.StartListner();
-            this.StartFilter();
-            this.StartStorage();
-            this.StartUser();
+            StartListner();
+            StartFilter();
+            StartStorage();
+            StartUser();
         }
 
         public void ReadWeft(string reading)
         {
-            this._listener.Read(reading);
+            _listener.Read(reading);
         }
 
         public bool RegisterDevice(DeviceInfo device)
         {
-            return _storage.RegisterDevice(device);
+            return _user.RegisterDevice(device);
+        }
+
+        public IEnumerable<ReadingLog> GetReadings()
+        {
+            PagingInfo pagingInfo = new PagingInfo();
+            return _user.GetReadings(pagingInfo);
         }
 
         #endregion
@@ -73,7 +81,7 @@ namespace serfid.MainModule
 
         private void StartUser()
         {
-            this._user.Start();
+            _user.Start();
         }
 
         #endregion

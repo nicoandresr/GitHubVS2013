@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using serfid.Interfaces.DataAccess;
 using serfid.Interfaces.Enumerations;
 using serfid.Interfaces.System;
 using serfid.Interfaces.User;
 using serfid.Interfaces.ValueObjects;
+using serfid.Interfaces.Storage;
 
 namespace serfid.User
 {
@@ -12,15 +12,15 @@ namespace serfid.User
     {
         #region Attributes
 
-        private readonly ISerfidDataAccess _serfidDataAccess;
+        private readonly IStorage _serfidStorage;
 
         #endregion
 
         #region Constructor
 
-        public User(ISerfidDataAccess serfidDataAccess)
+        public User(IStorage serfidStorage)
         {
-            _serfidDataAccess = serfidDataAccess;
+            _serfidStorage = serfidStorage;
         }
 
         #endregion
@@ -33,9 +33,14 @@ namespace serfid.User
             return ModuleStatus.success;
         }
 
-        public List<ReadingInfo> GetReadings(PagingInfo parameters)
+        public IEnumerable<ReadingLog> GetReadings(PagingInfo parameters)
         {
-            return _serfidDataAccess.GetReadings(parameters);
+            return _serfidStorage.GetReadings(parameters);
+        }
+
+        public bool RegisterDevice(DeviceInfo device)
+        {
+            return _serfidStorage.RegisterDevice(device);
         }
 
         #endregion

@@ -22,8 +22,8 @@ namespace serfid.Storage.Test
         [TestInitialize]
         public void Initialize()
         {
-            this.dataAccessMock = new Mock<ISerfidDataAccess>();
-            this.storage = new Storage(this.dataAccessMock.Object);
+            dataAccessMock = new Mock<ISerfidDataAccess>();
+            storage = new Storage(dataAccessMock.Object);
         }
 
         #endregion
@@ -33,8 +33,8 @@ namespace serfid.Storage.Test
         [TestCleanup]
         public void Cleanup()
         {
-            this.storage = null;
-            this.dataAccessMock = null;
+            storage = null;
+            dataAccessMock = null;
         }
 
         #endregion
@@ -47,7 +47,7 @@ namespace serfid.Storage.Test
             //Arrange
 
             //Act
-            ModuleStatus result = this.storage.Start();
+            ModuleStatus result = storage.Start();
 
             //Assert
             Assert.AreEqual(ModuleStatus.success, result);
@@ -61,7 +61,7 @@ namespace serfid.Storage.Test
             dataAccessMock.Setup(d => d.SaveReading(It.IsAny<ReadingInfo>()));
 
             //Act
-            StorageStatus result = this.storage.Save(readingInfo);
+            StorageStatus result = storage.SaveReading(readingInfo);
 
             //Assert
             Assert.AreEqual(StorageStatus.Saved, result);

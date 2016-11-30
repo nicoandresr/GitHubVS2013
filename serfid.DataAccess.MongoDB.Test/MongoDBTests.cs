@@ -65,7 +65,7 @@ namespace serfid.DataAccess.MongoDB.Test
         public void GetReadings()
         {
             // Arrange
-            List<ReadingInfo> readings = null;
+            IEnumerable<ReadingLog> readings = null;
 
             // Act
             readings = _mongoDA.GetReadings(new PagingInfo());

@@ -7,7 +7,7 @@ namespace serfid.Interfaces.DataAccess
     public interface ISerfidDataAccess
     {
         void SaveReading(ReadingInfo readingInfo);
-        List<ReadingInfo> GetReadings(PagingInfo parameters);
+        IEnumerable<ReadingLog> GetReadings(PagingInfo parameters);
         void RegisterDevice(DeviceInfo device);
     }
 }

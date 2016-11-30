@@ -7,6 +7,7 @@ using serfid.Interfaces.Enumerations;
 using serfid.Interfaces.System;
 using serfid.Interfaces.User;
 using serfid.Interfaces.ValueObjects;
+using serfid.Interfaces.Storage;
 
 namespace serfid.User.Test
 {
@@ -16,7 +17,7 @@ namespace serfid.User.Test
         #region Attributes
 
         private IUser user;
-        private Mock<ISerfidDataAccess> dataAccessMock;
+        private Mock<IStorage> dataAccessMock;
 
         #endregion
 
@@ -25,8 +26,8 @@ namespace serfid.User.Test
         [TestInitialize]
         public void Initialize()
         {
-            this.dataAccessMock = new Mock<ISerfidDataAccess>();
-            this.user = new User(this.dataAccessMock.Object);
+            dataAccessMock = new Mock<IStorage>();
+            user = new User(dataAccessMock.Object);
         }
 
         #endregion
@@ -36,7 +37,7 @@ namespace serfid.User.Test
         [TestCleanup]
         public void Cleanup()
         {
-            this.user = null;
+            user = null;
         }
 
         #endregion
@@ -49,7 +50,7 @@ namespace serfid.User.Test
             //Arrange
 
             //Act
-            ModuleStatus result = this.user.Start();
+            ModuleStatus result = user.Start();
 
             //Assert
             Assert.AreEqual(ModuleStatus.success, result);
@@ -60,14 +61,14 @@ namespace serfid.User.Test
         {
             //Arrange
             PagingInfo parameters = new PagingInfo();
-            List<ReadingInfo> response = new List<ReadingInfo>();
-            this.dataAccessMock.Setup(d => d.GetReadings(It.IsAny<PagingInfo>())).Returns(response);
+            IEnumerable<ReadingLog> response = new List<ReadingLog>();
+            dataAccessMock.Setup(d => d.GetReadings(It.IsAny<PagingInfo>())).Returns(response);
 
             //Act
-            List<ReadingInfo> result = this.user.GetReadings(parameters);
+            IEnumerable<ReadingLog> result = user.GetReadings(parameters);
 
             //Assert
-            this.dataAccessMock.VerifyAll();
+            dataAccessMock.VerifyAll();
         }
 
         #endregion
