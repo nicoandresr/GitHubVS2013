@@ -28,8 +28,7 @@ namespace serfid.DataAccess.MongoDB
             result = documents.ToList().Select(d => new ReadingLog
             {
                 Reader = d.GetValue("reader").ToString(),
-                Tag = d.GetValue("tag").ToString(),
-                ReadingDateTime = d.GetValue("date").ToUniversalTime(),
+                Tag = d.GetValue("tag").ToString()
             }).ToList();
             return result;
         }
