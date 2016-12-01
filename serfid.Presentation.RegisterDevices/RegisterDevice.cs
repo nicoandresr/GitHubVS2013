@@ -49,11 +49,12 @@ namespace serfid.Presentation.RegisterDevices
 
         private void btnScanTag_Click(object sender, EventArgs e)
         {
+            tbUidTag.Clear();
             SerialPort readingsPort = new SerialPort("COM3");
             readingsPort.Open();
             string entrada = readingsPort.ReadLine();
             readingsPort.Close();
-            tbUidTag.Text = entrada; //Guid.NewGuid().ToString().Replace("-", "").ToUpper().Substring(0, 19);
+            tbUidTag.Text = entrada;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -137,7 +138,7 @@ namespace serfid.Presentation.RegisterDevices
                                 ("Incomplete information\nPlease you must complete all fields"
                                 , "Error"
                                 , MessageBoxButtons.OK
-                                , MessageBoxIcon.Hand);
+                                , MessageBoxIcon.Exclamation);
         }
 
         #endregion
