@@ -1,6 +1,7 @@
 ﻿using serfid.Interfaces.ValueObjects;
 using serfid.MainModule;
 using System;
+using System.IO.Ports;
 using System.Windows.Forms;
 
 namespace serfid.Presentation.RegisterDevices
@@ -19,6 +20,7 @@ namespace serfid.Presentation.RegisterDevices
         {
             InitializeComponent();
             _serfidApp = new Serfid();
+            CheckForIllegalCrossThreadCalls = false;
         }
 
         #endregion
@@ -47,7 +49,11 @@ namespace serfid.Presentation.RegisterDevices
 
         private void btnScanTag_Click(object sender, EventArgs e)
         {
-            tbUidTag.Text = Guid.NewGuid().ToString().Replace("-", "").ToUpper().Substring(0, 19);
+            SerialPort readingsPort = new SerialPort("COM3");
+            readingsPort.Open();
+            string entrada = readingsPort.ReadLine();
+            readingsPort.Close();
+            tbUidTag.Text = entrada; //Guid.NewGuid().ToString().Replace("-", "").ToUpper().Substring(0, 19);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
