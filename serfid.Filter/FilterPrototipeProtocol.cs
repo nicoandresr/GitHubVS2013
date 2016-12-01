@@ -21,7 +21,7 @@ namespace serfid.Filter
 
         public FilterPrototipeProtocol(IStorage storage)
         {
-            this._storage = storage;
+            _storage = storage;
         }
 
         #endregion
@@ -36,10 +36,10 @@ namespace serfid.Filter
 
         public FilterResult Tramit(string weft)
         {
-            FilterResult result = this.ValidateWeft(weft);
+            FilterResult result = ValidateWeft(weft);
             if (result == FilterResult.Acepted)
             {
-                ReadingInfo information = this.GetReadingInfo(weft);
+                ReadingInfo information = GetReadingInfo(weft);
                 _storage.SaveReading(information);
             }
 
@@ -64,7 +64,7 @@ namespace serfid.Filter
 
         private FilterResult ValidateWeft(string weft)
         {
-            if (this.IsInvalidLength(weft))
+            if (IsInvalidLength(weft))
                 return FilterResult.Discard;
 
             if (IsInvalidStructure(weft))

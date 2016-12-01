@@ -1,27 +1,36 @@
 ﻿using System;
 using serfid.MainModule;
+using System.IO.Ports;
 
 namespace serfid.Console
 {
     static class Program
     {
+
+        private static SerialPort _serfidPort;
+
         static void Main(string[] args)
         {
-            Serfid appSerfid = new Serfid();
-            appSerfid.Run();
-            char option = 's';
-            while (option == 's')
+            try
             {
-                System.Console.WriteLine("Insertar una lectura s/n?:");
-                ConsoleKeyInfo keyInfo = System.Console.ReadKey();
-                option = keyInfo.KeyChar;
-                if (option == 's')
+                Serfid appSerfid = new Serfid();
+                appSerfid.Run();
+
+                _serfidPort = new SerialPort("COM3");
+                _serfidPort.Open();
+
+                System.Console.WriteLine("Serfid reading on port: COM3");
+                while (true)
                 {
-                    string reading = System.Console.ReadLine();
+                    string reading = _serfidPort.ReadLine();
                     appSerfid.ReadWeft(reading);
+                    System.Console.WriteLine("Tag " + reading + " processed successful ");
                 }
             }
-            
+            finally
+            {
+                _serfidPort.Close();
+            }
         }
     }
 }

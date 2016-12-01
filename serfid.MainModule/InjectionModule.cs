@@ -14,8 +14,8 @@ namespace serfid.MainModule
         public override void Load()
         {
             Bind<IListener>().To<Listener.Listener>();
-            Bind<ITranslator>().To<TranslatorBase64>();
-            Bind<IFilter>().To<Filter.FilterPrototipeProtocol>();
+            Bind<ITranslator>().To<TranslatorWhite>();
+            Bind<IFilter>().To<Filter.ArduinoRC522Protocol>();
             Bind<IStorage>().To<Storage.Storage>();
             Bind<ISerfidDataAccess>().To<serfid.DataAccess.MongoDB.MongoDataAccess>();
             Bind<IUser>().To<User.User>();
