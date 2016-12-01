@@ -41,7 +41,7 @@ namespace serfid.DataAccess.MongoDB
             {
                 { "reader", readingInfo.Reader },
                 { "tag", readingInfo.Tag },
-                { "date", readingInfo.ReadingDateTime }
+                { "date", ConvertDateToJsDate(readingInfo.ReadingDateTime) }
             };
             collection.InsertOne(document);
         }

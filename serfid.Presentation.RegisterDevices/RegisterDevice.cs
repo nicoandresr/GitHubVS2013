@@ -54,7 +54,7 @@ namespace serfid.Presentation.RegisterDevices
             readingsPort.Open();
             string entrada = readingsPort.ReadLine();
             readingsPort.Close();
-            tbUidTag.Text = entrada;
+            tbUidTag.Text = entrada.Replace("\r","");
         }
 
         private void btnSave_Click(object sender, EventArgs e)
