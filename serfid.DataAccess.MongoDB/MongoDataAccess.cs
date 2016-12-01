@@ -15,7 +15,7 @@ namespace serfid.DataAccess.MongoDB
 
         public MongoDataAccess()
         {
-            MongoClient mongoClient = new MongoClient("mongodb://nico:'S3rf1d'@ds061246.mlab.com:61246/serfid-db");
+            MongoClient mongoClient = new MongoClient("mongodb://localhost:27017/serfid-db");
             _db = mongoClient.GetDatabase("serfid-db");
         }
 
