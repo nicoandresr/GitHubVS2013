@@ -6,7 +6,6 @@ namespace serfid.Console
 {
     static class Program
     {
-
         private static SerialPort _serfidPort;
 
         static void Main(string[] args)
@@ -22,9 +21,13 @@ namespace serfid.Console
                 System.Console.WriteLine("Serfid reading on port: COM3");
                 while (true)
                 {
+                    System.Console.WriteLine("\nWaiting for readings...");
                     string reading = _serfidPort.ReadLine();
                     appSerfid.ReadWeft(reading);
-                    System.Console.WriteLine("Tag " + reading + " processed successful ");
+
+                    System.Console.SetCursorPosition(0, System.Console.CursorTop - 1);
+                    string result = string.Format("Tag {0} processed successful", reading.Replace("\r", ""));
+                    System.Console.WriteLine(result);
                 }
             }
             finally

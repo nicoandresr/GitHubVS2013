@@ -6,7 +6,7 @@ namespace serfid.InfraestructureCore.ReadingTranslators
     {
         public string TranslateReading(string encodeReading)
         {
-            return encodeReading;
+            return encodeReading.Replace("\r","");
         }
     }
 }
